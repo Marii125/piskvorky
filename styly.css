@@ -35,3 +35,37 @@ body {
 .background-dark-blue {
   background-color: #283e50;
 }
+
+
+.buttons {
+  width: 100%;
+  background-color: #283e50;
+}
+
+
+.btn {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px;
+  font-size: 18px;
+}
+
+.btn-first {
+  background-color: #1fcca4;
+}
+
+.btn-first:hover {
+  background-color: #1cbb96;
+}
+
+.btn-second {
+  background-color: #0197f6;
+  margin-top: 1px;
+
+}
+
+.btn-second:hover {
+  background-color: #0090e9;
+}

@@ -1,0 +1,37 @@
+body {
+  background: linear-gradient(#615dad, #ffc8da);
+  height: 100vh;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  position: relative;
+  top: 10%;
+}
+
+.img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.title {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 0;
+}
+
+.text {
+  margin-top: 0;
+  margin-bottom: 0px;
+  padding-bottom: 30px
+}
+
+.background-dark-blue {
+  background-color: #283e50;
+}

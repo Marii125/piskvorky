@@ -96,3 +96,18 @@ body {
 .btn-play:hover {
   background-color: #0090e9;
 }
+
+/* řešení pro backgroung na malym rozlišení */
+@media (max-width: 375px) {
+  body {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .container {
+    top: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+}

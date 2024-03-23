@@ -13,7 +13,7 @@ body {
   top: 10%;
 }
 
-.img {
+.img-responsive {
   width: 100%;
   max-width: 400px;
   height: auto;
@@ -79,20 +79,20 @@ body {
   padding-bottom: 10px;
 }
 
-.btn-first {
+.btn-rules {
   background-color: #1fcca4;
 }
 
-.btn-first:hover {
+.btn-rules:hover {
   background-color: #1cbb96;
 }
 
-.btn-second {
+.btn-play {
   background-color: #0197f6;
   margin-top: 1px;
 
 }
 
-.btn-second:hover {
+.btn-play:hover {
   background-color: #0090e9;
 }

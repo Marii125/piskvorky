@@ -3,6 +3,8 @@ body {
   height: 100vh;
   margin-top: 0;
   margin-bottom: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .container {
@@ -110,4 +112,11 @@ body {
     margin-bottom: 10px;
   }
 
+}
+
+
+@media (max-width: 1536px) {
+  .container {
+    top: 3%;
+  }
 }

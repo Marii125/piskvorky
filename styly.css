@@ -99,6 +99,55 @@ body {
   background-color: #0090e9;
 }
 
+/* druhá stránka hra.html */
+.game {
+  max-width: 80vmin;
+  margin: 0 auto;
+}
+
+.display-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gamer {
+  display: flex;
+}
+
+.gamer h2 {
+  color: #fff;
+  font-family: sans-serif, arial;
+}
+
+.gamer img {
+  margin-left: 10px;
+}
+
+
+.home img {
+  background-color: #1fcca4;
+  padding: 8px;
+  border-radius: 5px
+}
+
+.home img:hover {
+  background-color: #1cbb96;
+}
+
+.restart img {
+  background-color: #0197f6;
+  padding: 8px;
+  border-radius: 5px
+}
+
+.restart img:hover {
+  background-color: #0090e9;
+}
+
+
+
+
 /* řešení pro backgroung na malym rozlišení */
 @media (max-width: 375px) {
   body {

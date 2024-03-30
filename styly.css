@@ -99,7 +99,9 @@ body {
   background-color: #0090e9;
 }
 
-/* druhá stránka hra.html */
+/***********************
+*************************
+***************** druhá stránka hra.html */
 .game {
   max-width: 80vmin;
   margin: 0 auto;
@@ -143,6 +145,41 @@ body {
 
 .restart img:hover {
   background-color: #0090e9;
+}
+
+.hraci-pole {
+  /* height: calc(100vh - 180px); */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  border: 1px solid black;
+}
+
+
+
+.hraci-pole button {
+  width: calc(100% / 10);
+  /* height: 10%; */
+  border: 1px solid black;
+  cursor: pointer;
+  background: linear-gradient(#e3cbe0, #dac5de, #f2d5e5);
+  padding: 0;
+}
+
+.hraci-pole button:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.hraci-pole button:hover {
+  background: #ebdfe7;
+
+}
+
+.hraci-pole button:focus {
+  background: #ebdfe7;
+
 }
 
 

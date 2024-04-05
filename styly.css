@@ -1,6 +1,6 @@
 body {
   background: linear-gradient(#615dad, #ffc8da);
-  height: 100vh;
+  min-height: 100vh;
   margin-top: 0;
   margin-bottom: 0;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@ body {
   max-width: 400px;
   margin: 0 auto;
   position: relative;
-  top: 10%;
+  margin-top: 10%;
 }
 
 .img-responsive {
@@ -126,6 +126,15 @@ body {
   margin-left: 10px;
 }
 
+.buttons-home-return {
+  display: inline-block;
+  height: 40px;
+}
+
+.buttons-home-return a {
+  text-decoration: none;
+}
+
 
 .home img {
   background-color: #1fcca4;
@@ -153,6 +162,7 @@ body {
   flex-wrap: wrap;
   flex-direction: row-reverse;
   border: 1px solid black;
+  margin-bottom: 15px;
 }
 
 
@@ -203,6 +213,6 @@ body {
 
 @media (max-width: 1536px) {
   .container {
-    top: 3%;
+    margin-top: 3%;
   }
 }

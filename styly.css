@@ -99,9 +99,9 @@ body {
   background-color: #0090e9;
 }
 
-/***********************
+/************************
 *************************
-***************** druhá stránka hra.html */
+************************* druhá stránka hra.html */
 .game {
   max-width: 80vmin;
   margin: 0 auto;
@@ -173,6 +173,7 @@ body {
   border: 1px solid black;
   cursor: pointer;
   background: linear-gradient(#e3cbe0, #dac5de, #f2d5e5);
+  ;
   padding: 0;
 }
 
@@ -180,10 +181,14 @@ body {
   content: "";
   display: block;
   padding-bottom: 100%;
+  transform: scale(0.1);
+  transition: transform 0.5s;
 }
 
 .hraci-pole button:hover {
   background: #ebdfe7;
+
+
 
 }
 
@@ -192,7 +197,27 @@ body {
 
 }
 
+/**********************
+***********************
+*********************** přidání koleček a křížků do hracího pole(první řádek herní plochy, prvních deset políček*/
 
+/* after je z důvodu, aby hrací pole mělo stejnou barvu(background) i při kliknutí, přidání koleček a křížků */
+.hraci-pole .board__field--circle:after {
+  background-image: url("img/black-circle.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scale(1);
+}
+
+
+.hraci-pole .board__field--cross:after {
+  background-image: url("img/black-cross.svg");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scale(1);
+}
 
 
 /* řešení pro backgroung na malym rozlišení */

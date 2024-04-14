@@ -5,12 +5,12 @@ const play = (event) => {
   if (currentPlayer === 'circle') {
     event.target.classList.add('board__field--circle');
     let picture = document.querySelector('.gamer img');
-    picture.src = 'img/circle.svg';
+    picture.src = 'img/cross.svg';
     currentPlayer = 'cross';
   } else if (currentPlayer === 'cross') {
     event.target.classList.add('board__field--cross');
     let picture = document.querySelector('.gamer img');
-    picture.src = 'img/cross.svg';
+    picture.src = 'img/circle.svg';
     currentPlayer = 'circle';
   }
 };

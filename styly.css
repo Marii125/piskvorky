@@ -160,7 +160,6 @@ body {
   /* height: calc(100vh - 180px); */
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row-reverse;
   border: 1px solid black;
   margin-bottom: 15px;
 }

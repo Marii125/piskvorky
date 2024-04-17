@@ -1,3 +1,19 @@
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
+
+const getPlayground = () => {
+  let wholePlayground = document.querySelectorAll('.hraci-pole button');
+  let array = [];
+  wholePlayground.forEach((buttonEl, index) => {
+    if (buttonEl.classList.contains('board__field--circle')) {
+      array.push('o');
+    } else if (buttonEl.classList.contains('board__field--cross')) {
+      array.push('x');
+    } else {
+      array.push('_');
+    }
+  });
+  return array;
+};
 let currentPlayer = 'circle';
 
 const play = (event) => {
@@ -13,17 +29,28 @@ const play = (event) => {
     picture.src = 'img/circle.svg';
     currentPlayer = 'circle';
   }
+
+  let array = getPlayground(findWinner);
+
+  const winner = findWinner(array);
+  //bonus
+  if (winner === 'o' || winner === 'x') {
+    setTimeout(() => {
+      alert(`Vyhrál hráč se symbolem ${winner}.`);
+      location.reload();
+    }, 1000);
+  } else if (winner === 'tie') {
+    setTimeout(() => {
+      alert(`Hra skončila ${winner}.`);
+      location.reload();
+    }, 1000);
+  }
 };
-document.querySelector('button:nth-child(1)').addEventListener('click', play);
-document.querySelector('button:nth-child(2)').addEventListener('click', play);
-document.querySelector('button:nth-child(3)').addEventListener('click', play);
-document.querySelector('button:nth-child(4)').addEventListener('click', play);
-document.querySelector('button:nth-child(5)').addEventListener('click', play);
-document.querySelector('button:nth-child(6)').addEventListener('click', play);
-document.querySelector('button:nth-child(7)').addEventListener('click', play);
-document.querySelector('button:nth-child(8)').addEventListener('click', play);
-document.querySelector('button:nth-child(9)').addEventListener('click', play);
-document.querySelector('button:nth-child(10)').addEventListener('click', play);
+
+const allButtons = document.querySelectorAll('.hraci-pole button');
+allButtons.forEach((selectAllButtons) => {
+  selectAllButtons.addEventListener('click', play);
+});
 
 // bonus
 document.querySelector('.restart').addEventListener('click', (event) => {

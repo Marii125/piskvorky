@@ -38,12 +38,12 @@ const play = (event) => {
     setTimeout(() => {
       alert(`Vyhrál hráč se symbolem ${winner}.`);
       location.reload();
-    }, 1000);
+    }, 500);
   } else if (winner === 'tie') {
     setTimeout(() => {
       alert(`Hra skončila ${winner}.`);
       location.reload();
-    }, 1000);
+    }, 500);
   }
 };
 

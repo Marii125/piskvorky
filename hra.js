@@ -1,7 +1,8 @@
 import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
 
+let wholePlayground = document.querySelectorAll('.hraci-pole button');
+
 const getPlayground = () => {
-  let wholePlayground = document.querySelectorAll('.hraci-pole button');
   let array = [];
   wholePlayground.forEach((buttonEl, index) => {
     if (buttonEl.classList.contains('board__field--circle')) {
@@ -15,6 +16,45 @@ const getPlayground = () => {
   return array;
 };
 let currentPlayer = 'circle';
+
+//API
+const getCrossTurn = async (board) => {
+  //bonus
+  const checkButton = document.querySelectorAll('.hraci-pole button');
+  checkButton.forEach((button) => {
+    button.disabled = true;
+  });
+  //
+  const response = await fetch(
+    'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+    {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        board: board,
+        player: 'x', // Hledá tah pro křížek.
+      }),
+    },
+  );
+  const data = await response.json();
+  //bonus
+  checkButton.forEach((button) => {
+    if (
+      button.classList.contains('board__field--circle') ||
+      button.classList.contains('board__field--cross')
+    ) {
+      button.disabled = true;
+    } else {
+      button.disabled = false;
+    }
+  });
+
+  const { x, y } = data.position;
+  const button = wholePlayground[x + y * 10];
+  button.click();
+};
 
 const play = (event) => {
   event.target.disabled = true;
@@ -30,9 +70,8 @@ const play = (event) => {
     currentPlayer = 'circle';
   }
 
-  let array = getPlayground(findWinner);
-
-  const winner = findWinner(array);
+  let board = getPlayground();
+  const winner = findWinner(board);
   //bonus
   if (winner === 'o' || winner === 'x') {
     setTimeout(() => {
@@ -44,6 +83,11 @@ const play = (event) => {
       alert(`Hra skončila ${winner}.`);
       location.reload();
     }, 500);
+  }
+
+  //API
+  if (currentPlayer === 'cross') {
+    getCrossTurn(board);
   }
 };
 

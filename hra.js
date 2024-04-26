@@ -4,7 +4,7 @@ let wholePlayground = document.querySelectorAll('.hraci-pole button');
 
 const getPlayground = () => {
   let array = [];
-  wholePlayground.forEach((buttonEl, index) => {
+  wholePlayground.forEach((buttonEl) => {
     if (buttonEl.classList.contains('board__field--circle')) {
       array.push('o');
     } else if (buttonEl.classList.contains('board__field--cross')) {
